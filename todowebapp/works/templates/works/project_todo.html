@@ -1,0 +1,219 @@
+<!-- project_detail.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ project.title }} - Todos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 80px; /* Adjusted padding to accommodate navbar height */
+            padding-bottom: 20px; /* Added padding to bottom for space */
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .title-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #343a40;
+            font-size: 24px; /* Decreased font size */
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 8px 8px 0 0;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .card-title {
+            color: #343a40;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .card-text {
+            color: #6c757d;
+            font-size: 14px;
+        }
+        .badge {
+            font-size: 14px;
+            padding: 6px 10px;
+            border-radius: 4px;
+        }
+        .badge-success {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .badge-warning {
+            background-color: #ffc107;
+            color: #343a40;
+        }
+        .btn-edit,
+        .btn-delete {
+            margin-top: 10px;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-edit {
+            background-color: #ffc107;
+            color: #343a40;
+            border: 1px solid #ffc107;
+        }
+        .btn-delete {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">ToDo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{%url 'projectadd'%}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'projectlist' %}">Your Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Project Title -->
+        <div class="title-container">
+            <h1>{{ project.title }} - Todos</h1>
+        </div>
+
+        <div class="row">
+            <!-- Form Container -->
+            <div class="col-md-6">
+                <div class="form-container">
+                    <h2>Add New Todo</h2>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="{{ form.title.id_for_label }}">Title:</label>
+                            {{ form.title }}
+                            {% if form.title.errors %}
+                                <small class="text-danger">{{ form.title.errors|join:", " }}</small>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.description.id_for_label }}">Description:</label>
+                            {{ form.description }}
+                            {% if form.description.errors %}
+                                <small class="text-danger">{{ form.description.errors|join:", " }}</small>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.status.id_for_label }}">Status:</label>
+                            {{ form.status }}
+                            {% if form.status.errors %}
+                                <small class="text-danger">{{ form.status.errors|join:", " }}</small>
+                            {% endif %}
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Add Todo</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Result Container -->
+            <div class="col-md-6">
+                <div class="result-container">
+                    <h2>Existing Todos</h2>
+                    {% for todo in todos %}
+                        <div class="card">
+                            <div class="card-header">
+                                {{ todo.title }}
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">{{ todo.description }}</p>
+                                <p><strong>Status:</strong> {% if todo.status %}Completed{% else %}Pending{% endif %}</p>
+                                <p><strong>Created:</strong> {{ todo.created_date }}</p>
+                                <p><strong>Last Updated:</strong> {{ todo.updated_date }}</p>
+                                <div class="btn-group" role="group">
+                                    <a href="{% url 'todo_update' todo.id %}" class="btn btn-edit">Edit</a>
+                                    <a href="{% url 'todo_delete' todo.id %}" class="btn btn-delete">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Bootstrap and jQuery scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
