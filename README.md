@@ -12,7 +12,8 @@ The Todo web application built using Django provides users with the ability to m
 ![Screenshot (13)](https://github.com/habilkareem/ToDo-webapplication/assets/148938915/0c8bf11e-fe6a-434a-9967-e13074c8f9be)
 𝟐.𝐃𝐚𝐬𝐡𝐛𝐨𝐚𝐫𝐝 - 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 𝐌𝐚𝐧𝐚𝐠𝐞𝐦𝐞𝐧𝐭
 
-• Upon successful login, users are directed to their dashboard.
+• Upon successful login, users are directed to their dashboard and get an option to create projects.
+![Screenshot (14)](https://github.com/habilkareem/ToDo-webapplication/assets/148938915/d20860ad-c423-4dd4-8ae8-7d6658fde564)
 • The dashboard displays a list of existing projects belonging to the user.
 • Users can perform the following actions for each project:
 Create Project: Users can create a new project by providing a project name and description.
