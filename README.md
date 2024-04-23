@@ -14,10 +14,7 @@ The Todo web application built using Django provides users with the ability to m
 
 • Upon successful login, users are directed to their dashboard and get an option to create projects.
 ![Screenshot (14)](https://github.com/habilkareem/ToDo-webapplication/assets/148938915/d20860ad-c423-4dd4-8ae8-7d6658fde564)
-• When the user clicks on the 'your projects' option in navbar, The dashboard displays a list of existing projects belonging to the user.
+• When the user clicks on the 'your projects' option in navbar, The dashboard displays a list of existing projects belonging to the user and user can perform actions for each project such as View project, Edit project, Delete Project
 ![Screenshot (15)](https://github.com/habilkareem/ToDo-webapplication/assets/148938915/51399fc5-0da0-459a-8058-04b75137144c)
-• Users can perform the following actions for each project:
-Create Project: Users can create a new project by providing a project name and description.
-Edit Project: Users can edit the details (name, description) of an existing project.
-Delete Project: Users can delete a project, which also deletes all associated tasks (Todos).
+
 
