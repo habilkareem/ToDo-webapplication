@@ -30,7 +30,7 @@ Create Todo, Edit Todo, Delete Todo, Update Todo Status(Completed or Pending)
 The Todo web application leverages the following technologies and frameworks:
 
 Django: Backend framework for handling HTTP requests, routing, database interactions, and template rendering.                                                                                                        
-HTML/CSS: Frontend for displaying project and task management interfaces.
+HTML/CSS: Frontend for displaying project and task management interfaces.                                                                                                                                            
 Bootstrap (optional): UI framework for responsive and visually appealing design elements.
 
 𝐂𝐨𝐧𝐜𝐥𝐮𝐬𝐢𝐨𝐧
