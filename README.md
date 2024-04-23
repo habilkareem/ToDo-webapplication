@@ -7,4 +7,6 @@ The Todo web application built using Django provides users with the ability to m
 𝐔𝐬𝐞𝐫 𝐀𝐮𝐭𝐡𝐞𝐧𝐭𝐢𝐜𝐚𝐭𝐢𝐨𝐧
 
 Users first need to authenticate themselves by logging into the application.
+![Screenshot (12)](https://github.com/habilkareem/ToDo-webapplication/assets/148938915/ddc01f61-8282-4185-99c0-3e6a42e79eca)
 If they don't have an account, they can sign up to create a new account.
+
