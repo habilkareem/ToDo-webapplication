@@ -22,9 +22,6 @@ The project details page displays:
 Project name, List of Todos associated with the project
 ![Screenshot (16)](https://github.com/habilkareem/ToDo-webapplication/assets/148938915/197b00c1-b2c5-4009-b696-310effce1ad4)
 For each Todo, users can perform the following actions:
-Create Todo: Users can add a new Todo to the project by providing a task description.
-Edit Todo: Users can edit the description of an existing Todo.
-Delete Todo: Users can delete a Todo from the project.
-Update Todo Status: Users can mark a Todo as completed or change its status (e.g., from incomplete to complete).
+Create Todo, Edit Todo, Delete Todo, Update Todo Status(Completed or Pending)
 
 
