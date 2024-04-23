@@ -4,10 +4,18 @@ The Todo web application built using Django provides users with the ability to m
 
 𝐔𝐬𝐞𝐫 𝐈𝐧𝐭𝐞𝐫𝐚𝐜𝐭𝐢𝐨𝐧 𝐅𝐥𝐨𝐰
 
-𝐔𝐬𝐞𝐫 𝐀𝐮𝐭𝐡𝐞𝐧𝐭𝐢𝐜𝐚𝐭𝐢𝐨𝐧
+𝟏.𝐔𝐬𝐞𝐫 𝐀𝐮𝐭𝐡𝐞𝐧𝐭𝐢𝐜𝐚𝐭𝐢𝐨𝐧
 
-Users first need to authenticate themselves by logging into the application.
+• Users first need to authenticate themselves by logging into the application.
 ![Screenshot (12)](https://github.com/habilkareem/ToDo-webapplication/assets/148938915/ddc01f61-8282-4185-99c0-3e6a42e79eca)
-If they don't have an account, they can sign up to create a new account.
+• If they don't have an account, they can sign up to create a new account.
 ![Screenshot (13)](https://github.com/habilkareem/ToDo-webapplication/assets/148938915/0c8bf11e-fe6a-434a-9967-e13074c8f9be)
+𝟐.𝐃𝐚𝐬𝐡𝐛𝐨𝐚𝐫𝐝 - 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 𝐌𝐚𝐧𝐚𝐠𝐞𝐦𝐞𝐧𝐭
+
+• Upon successful login, users are directed to their dashboard.
+• The dashboard displays a list of existing projects belonging to the user.
+• Users can perform the following actions for each project:
+       • Create Project: Users can create a new project by providing a project name and description.
+       • Edit Project: Users can edit the details (name, description) of an existing project.
+       • Delete Project: Users can delete a project, which also deletes all associated tasks (Todos).
 
