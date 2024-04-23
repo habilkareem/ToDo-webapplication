@@ -19,9 +19,8 @@ The Todo web application built using Django provides users with the ability to m
 𝟑.𝐕𝐢𝐞𝐰 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 𝐃𝐞𝐭𝐚𝐢𝐥𝐬 - 𝐓𝐨𝐝𝐨 𝐌𝐚𝐧𝐚𝐠𝐞𝐦𝐞𝐧𝐭
 When the user clicks on the Project View,
 The project details page displays:
-Project name
-List of Todos associated with the project
-
+Project name, List of Todos associated with the project
+![Screenshot (16)](https://github.com/habilkareem/ToDo-webapplication/assets/148938915/197b00c1-b2c5-4009-b696-310effce1ad4)
 For each Todo, users can perform the following actions:
 Create Todo: Users can add a new Todo to the project by providing a task description.
 Edit Todo: Users can edit the description of an existing Todo.
